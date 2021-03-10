@@ -14,6 +14,6 @@ extension UIColor {
     }
     
     static let backgroundColor = UIColor.rgb(red: 107, green: 86, blue: 188)
-    static let circleBackgroundColor = UIColor.rgb(red: 128, green: 198, blue: 191)
-    static let loginViewBackgroundColor = UIColor.rgb(red: 215, green: 211, blue: 239)
+    static let circleViewBackgroundColor = UIColor.rgb(red: 128, green: 198, blue: 191)
+    static let rectangularViewBackgroundColor = UIColor.rgb(red: 215, green: 211, blue: 239)
 }

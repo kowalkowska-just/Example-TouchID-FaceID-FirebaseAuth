@@ -9,7 +9,7 @@ import UIKit
 
 extension UITextField {
     
-    func textField(isSecureTextEntry: Bool) -> UITextField {
+    func createTextField(isSecureTextEntry: Bool) -> UITextField {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.borderStyle = .roundedRect
