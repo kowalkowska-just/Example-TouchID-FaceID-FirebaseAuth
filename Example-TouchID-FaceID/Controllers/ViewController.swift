@@ -13,11 +13,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .backgroundColor
         
-        view.addSubview(loginView)
+        setupView()
+    }
+    
+    //MARK: - Helper Functions
+    
+    private func setupView() {
+        
+        view.addGradientWithColors(.topGradientColor, .bottomGradientColor, direction: .topToBottom)
+        
         let widthView = view.frame.width
         
+        view.addSubview(loginView)
         loginView.frame = CGRect(x: 40, y: 125, width: widthView - 80, height: 475)
     }
 
