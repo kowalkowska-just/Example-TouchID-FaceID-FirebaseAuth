@@ -7,35 +7,24 @@
 
 import UIKit
 
+protocol LoginViewDelegate {
+    func showSignUpView()
+}
+
+
 class LoginView: RoundedCornerView {
     
     //MARK: - Properties
     
+    var delegate: LoginViewDelegate?
+    
     private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.text = "Login"
-        label.textAlignment = .center
-        label.font = UIFont.init(name: "Avenir Next Medium Italic", size: 28)
+        let label = UILabel().createTitleLabel(withText: "Login")
         return label
     }()
     
     private lazy var circleView: RoundedCornerView =  {
-        let view = RoundedCornerView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .circleViewBackgroundColor
-        view.addSubview(titleLabel)
-        view.borderColor = .white
-        view.cornerRadius = 75
-        view.borderWidth = 4
-        
-        NSLayoutConstraint.activate([
-            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            view.heightAnchor.constraint(equalToConstant: 150),
-            view.widthAnchor.constraint(equalToConstant: 150)
-        ])
+        let view = RoundedCornerView().addCircleView(withLabel: titleLabel)
         return view
     }()
     
@@ -85,6 +74,7 @@ class LoginView: RoundedCornerView {
         button.backgroundColor = .clear
         button.titleLabel?.font = UIFont.init(name: "Avenir Next Medium Italic", size: 18)
         button.titleLabel?.textAlignment = .right
+        button.addTarget(self, action: #selector(handleShowSingUp), for: .touchUpInside)
         return button
     }()
     
@@ -102,7 +92,6 @@ class LoginView: RoundedCornerView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
         setupView()
     }
     
@@ -110,9 +99,16 @@ class LoginView: RoundedCornerView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Selectors
+    
+    @objc private func handleShowSingUp() {
+        delegate?.showSignUpView()
+    }
+    
     //MARK: - Helper Functions
     
     private func setupView() {
+        
         
         backgroundColor = .clear
         
