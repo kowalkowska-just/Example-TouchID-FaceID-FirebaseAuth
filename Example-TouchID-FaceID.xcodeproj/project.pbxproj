@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCE04E17DFDB689A3CD01886 /* Pods_Example_TouchID_FaceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBE5F6B76D88FE6B4A00CF3 /* Pods_Example_TouchID_FaceID.framework */; };
+		D13CFF8B25FADD30001C1F4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13CFF8A25FADD30001C1F4C /* GoogleService-Info.plist */; };
 		D161F60825F6BCE7002F9707 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161F60725F6BCE7002F9707 /* AppDelegate.swift */; };
 		D161F60A25F6BCE7002F9707 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161F60925F6BCE7002F9707 /* SceneDelegate.swift */; };
 		D161F60C25F6BCE7002F9707 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161F60B25F6BCE7002F9707 /* LoginViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E50E402CF4F3CDDAA57EEA9 /* Pods-Example-TouchID-FaceID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-TouchID-FaceID.debug.xcconfig"; path = "Target Support Files/Pods-Example-TouchID-FaceID/Pods-Example-TouchID-FaceID.debug.xcconfig"; sourceTree = "<group>"; };
+		D13CFF8A25FADD30001C1F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D161F60425F6BCE7002F9707 /* Example-TouchID-FaceID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-TouchID-FaceID.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D161F60725F6BCE7002F9707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D161F60925F6BCE7002F9707 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		D161F64425F971DD002F9707 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D161F64825F973D9002F9707 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D161F64B25F97A35002F9707 /* RoundedCornerViewExtension-Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundedCornerViewExtension-Circle.swift"; sourceTree = "<group>"; };
+		DFC306E821588282B2554F44 /* Pods-Example-TouchID-FaceID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-TouchID-FaceID.release.xcconfig"; path = "Target Support Files/Pods-Example-TouchID-FaceID/Pods-Example-TouchID-FaceID.release.xcconfig"; sourceTree = "<group>"; };
+		EEBE5F6B76D88FE6B4A00CF3 /* Pods_Example_TouchID_FaceID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_TouchID_FaceID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +55,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE04E17DFDB689A3CD01886 /* Pods_Example_TouchID_FaceID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EA08A581AA0D021CC9CCCA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E50E402CF4F3CDDAA57EEA9 /* Pods-Example-TouchID-FaceID.debug.xcconfig */,
+				DFC306E821588282B2554F44 /* Pods-Example-TouchID-FaceID.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D161F5FB25F6BCE7002F9707 = {
 			isa = PBXGroup;
 			children = (
 				D161F60625F6BCE7002F9707 /* Example-TouchID-FaceID */,
 				D161F60525F6BCE7002F9707 /* Products */,
+				1EA08A581AA0D021CC9CCCA7 /* Pods */,
+				DBA6C14B3966B5E1B0F65D56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +102,7 @@
 				D161F60925F6BCE7002F9707 /* SceneDelegate.swift */,
 				D161F61025F6BCEB002F9707 /* Assets.xcassets */,
 				D161F61225F6BCEB002F9707 /* LaunchScreen.storyboard */,
+				D13CFF8A25FADD30001C1F4C /* GoogleService-Info.plist */,
 				D161F61525F6BCEB002F9707 /* Info.plist */,
 			);
 			path = "Example-TouchID-FaceID";
@@ -134,6 +154,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DBA6C14B3966B5E1B0F65D56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEBE5F6B76D88FE6B4A00CF3 /* Pods_Example_TouchID_FaceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D161F61825F6BCEB002F9707 /* Build configuration list for PBXNativeTarget "Example-TouchID-FaceID" */;
 			buildPhases = (
+				54DC87364E0419ED06A0F495 /* [CP] Check Pods Manifest.lock */,
 				D161F60025F6BCE7002F9707 /* Sources */,
 				D161F60125F6BCE7002F9707 /* Frameworks */,
 				D161F60225F6BCE7002F9707 /* Resources */,
+				AB7A719D70C3B40FEF0CA1E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,10 +223,53 @@
 			files = (
 				D161F61425F6BCEB002F9707 /* LaunchScreen.storyboard in Resources */,
 				D161F61125F6BCEB002F9707 /* Assets.xcassets in Resources */,
+				D13CFF8B25FADD30001C1F4C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54DC87364E0419ED06A0F495 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-TouchID-FaceID-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7A719D70C3B40FEF0CA1E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example-TouchID-FaceID/Pods-Example-TouchID-FaceID-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example-TouchID-FaceID/Pods-Example-TouchID-FaceID-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example-TouchID-FaceID/Pods-Example-TouchID-FaceID-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D161F60025F6BCE7002F9707 /* Sources */ = {
@@ -351,6 +424,7 @@
 		};
 		D161F61925F6BCEB002F9707 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E50E402CF4F3CDDAA57EEA9 /* Pods-Example-TouchID-FaceID.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +445,7 @@
 		};
 		D161F61A25F6BCEB002F9707 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFC306E821588282B2554F44 /* Pods-Example-TouchID-FaceID.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

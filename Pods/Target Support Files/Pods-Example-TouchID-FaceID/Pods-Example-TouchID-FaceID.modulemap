@@ -1,0 +1,6 @@
+framework module Pods_Example_TouchID_FaceID {
+  umbrella header "Pods-Example-TouchID-FaceID-umbrella.h"
+
+  export *
+  module * { export * }
+}

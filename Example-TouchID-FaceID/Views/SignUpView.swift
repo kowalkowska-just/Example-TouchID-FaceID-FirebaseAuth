@@ -22,7 +22,6 @@ class SignUpView: UIView {
         button.layer.borderColor = UIColor.white.cgColor
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
         return button
     }()
     
