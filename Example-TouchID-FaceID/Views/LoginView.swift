@@ -12,7 +12,7 @@ protocol LoginViewDelegate {
 }
 
 
-class LoginView: RoundedCornerView {
+class LoginView: UIView {
     
     //MARK: - Properties
     
@@ -112,7 +112,7 @@ class LoginView: RoundedCornerView {
         
         backgroundColor = .clear
         
-        [rectangularView, circleView, emailLabel, emailTextField, passwordLabel, passwordTextField, loginButton].forEach { (subview) in
+        [rectangularView, circleView].forEach { (subview) in
             self.addSubview(subview)
         }
         

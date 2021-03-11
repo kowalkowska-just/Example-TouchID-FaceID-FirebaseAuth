@@ -9,9 +9,21 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    var signUpView = SignUpView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        setupView()
     }
-
+    //MARK: - Helper Functions
+    
+    private func setupView() {
+        
+        view.addGradientWithColors(.topGradientColor, .bottomGradientColor, direction: .topToBottom)
+        
+        let widthView = view.frame.width
+        
+        view.addSubview(signUpView)
+        signUpView.frame = CGRect(x: 40, y: 125, width: widthView - 80, height: 450)
+    }
 }
