@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SignUpViewDelegate {
+    func closeSignUpView()
+}
+
 class SignUpView: UIView {
 
     //MARK: - Properties
+    
+    var delegate: SignUpViewDelegate?
     
     private var backButton: UIButton = {
         let button = UIButton()
@@ -22,6 +28,7 @@ class SignUpView: UIView {
         button.layer.borderColor = UIColor.white.cgColor
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        button.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
         return button
     }()
     
@@ -93,6 +100,12 @@ class SignUpView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Selectors
+    
+    @objc func didTapCloseButton() {
+        delegate?.closeSignUpView()        
     }
     
     //MARK: - Helper Functions

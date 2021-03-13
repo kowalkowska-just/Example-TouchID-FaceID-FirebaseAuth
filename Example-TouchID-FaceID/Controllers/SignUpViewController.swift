@@ -13,8 +13,12 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signUpView.delegate = self
+        
         setupView()
     }
+    
     //MARK: - Helper Functions
     
     private func setupView() {
@@ -25,5 +29,13 @@ class SignUpViewController: UIViewController {
         
         view.addSubview(signUpView)
         signUpView.frame = CGRect(x: 40, y: 125, width: widthView - 80, height: 450)
+    }
+}
+
+//MARK: - SignUpViewDelegate
+
+extension SignUpViewController: SignUpViewDelegate {
+    func closeSignUpView() {
+        navigationController?.popViewController(animated: true)
     }
 }
