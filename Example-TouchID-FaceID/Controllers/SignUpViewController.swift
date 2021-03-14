@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         signUpView.delegate = self
-        
+        configureNavigationBar()
         setupView()
     }
     
@@ -28,8 +28,13 @@ class SignUpViewController: UIViewController {
         let widthView = view.frame.width
         
         view.addSubview(signUpView)
-        signUpView.frame = CGRect(x: 40, y: 125, width: widthView - 80, height: 450)
+        signUpView.frame = CGRect(x: 40, y: 125, width: widthView - 80, height: 500)
     }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+
 }
 
 //MARK: - SignUpViewDelegate

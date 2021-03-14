@@ -87,6 +87,8 @@ class SignUpView: UIView {
         let button = AuthButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.init(name: "Avenir Next Medium Italic", size: 20)
+        button.isEnabled = true
+        button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         return button
     }()
     
@@ -104,8 +106,20 @@ class SignUpView: UIView {
     
     //MARK: - Selectors
     
+    @objc func didTapSignUpButton() {
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let password = passwordTextField.text
+        else {
+            return
+        }
+        
+        print("Name: \(name), email: \(email), password: \(password)")
+        
+    }
+    
     @objc func didTapCloseButton() {
-        delegate?.closeSignUpView()        
+        delegate?.closeSignUpView()
     }
     
     //MARK: - Helper Functions

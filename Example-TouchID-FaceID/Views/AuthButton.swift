@@ -18,6 +18,7 @@ class AuthButton: UIButton {
         backgroundColor = .circleViewBackgroundColor
         layer.cornerRadius = 3
         heightAnchor.constraint(equalToConstant: 50).isActive = true
+        clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {

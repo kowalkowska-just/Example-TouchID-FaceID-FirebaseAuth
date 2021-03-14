@@ -6,6 +6,7 @@ target 'Example-TouchID-FaceID' do
   use_frameworks!
 
 	pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   # Pods for Example-TouchID-FaceID
 
