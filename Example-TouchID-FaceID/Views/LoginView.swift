@@ -18,7 +18,7 @@ class LoginView: UIView {
     
     var delegate: LoginViewDelegate?
     
-    private lazy var titleLabel: UILabel = {
+    private var titleLabel: UILabel = {
         let label = UILabel().createTitleLabel(withText: "Login")
         return label
     }()
@@ -116,74 +116,43 @@ class LoginView: UIView {
             self.addSubview(subview)
         }
         
-        [emailLabel, emailTextField, passwordLabel, passwordTextField, loginButton, showSignUpViewButton, faceIDImage].forEach { (subview) in
+        [loginButton, showSignUpViewButton, faceIDImage].forEach { (subview) in
             rectangularView.addSubview(subview)
         }
         
-        setupConstraints()
-    }
-    
-    private func setupConstraints() {
-        
+        //Setup constraints
         //Rectangular View
-        NSLayoutConstraint.activate([
-            rectangularView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            rectangularView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            rectangularView.heightAnchor.constraint(equalToConstant: 400),
-            rectangularView.topAnchor.constraint(equalTo: self.topAnchor, constant: 75)
-        ])
+        rectangularView.anchor(top: topAnchor,
+                               left: leftAnchor,
+                               right: rightAnchor,
+                               paddingTop: 75, height: 400)
         
         //Circle View
-        NSLayoutConstraint.activate([
-            circleView.centerXAnchor.constraint(equalTo: rectangularView.centerXAnchor),
-            circleView.centerYAnchor.constraint(equalTo: rectangularView.topAnchor)
-        ])
+        circleView.centerX(inView: rectangularView)
+        circleView.centerYAnchor.constraint(equalTo: rectangularView.topAnchor).isActive = true
         
-        //Email Label
-        NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: rectangularView.topAnchor, constant: 90),
-            emailLabel.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 20),
-            emailLabel.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -20)
-        ])
-        
-        //Email TextField
-        NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 10),
-            emailTextField.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 20),
-            emailTextField.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -20)
-        ])
-        
-        //Password Label
-        NSLayoutConstraint.activate([
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
-            passwordLabel.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 20),
-            passwordLabel.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -20)
-        ])
-        
-        //Password TextField
-        NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 10),
-            passwordTextField.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 20),
-            passwordTextField.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -20)
-        ])
+        //stack with the email label/textField and password label/textField
+        let stack = UIStackView(arrangedSubviews: [emailLabel, emailTextField, passwordLabel, passwordTextField])
+        stack.axis = .vertical
+        stack.spacing = 10
+        rectangularView.addSubview(stack)
+        stack.anchor(top: rectangularView.topAnchor,
+                     left: rectangularView.leftAnchor,
+                     right: rectangularView.rightAnchor,
+                     paddingTop: 90, paddingLeft: 20, paddingRight: 20)
         
         //Login Button
-        NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
-            loginButton.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 20),
-            loginButton.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -20)
-        ])
+        loginButton.anchor(top: stack.bottomAnchor,
+                           left: rectangularView.leftAnchor,
+                           right: rectangularView.rightAnchor,
+                           paddingTop: 15, paddingLeft: 20, paddingRight: 20)
         
         //ShowSignUpViewButton
-        NSLayoutConstraint.activate([
-            showSignUpViewButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
-            showSignUpViewButton.rightAnchor.constraint(equalTo: rectangularView.rightAnchor, constant: -8)
-        ])
+        showSignUpViewButton.anchor(top: loginButton.bottomAnchor,
+                                    right: rectangularView.rightAnchor,
+                                    paddingTop: 10, paddingRight: 8)
         
         //Face ID Image
-        NSLayoutConstraint.activate([
-            faceIDImage.bottomAnchor.constraint(equalTo: rectangularView.bottomAnchor, constant: -8),
-            faceIDImage.leftAnchor.constraint(equalTo: rectangularView.leftAnchor, constant: 8)
-        ])
+        faceIDImage.anchor(left: rectangularView.leftAnchor, bottom: rectangularView.bottomAnchor, paddingLeft: 8, paddingBottom: 8)
     }
 }
